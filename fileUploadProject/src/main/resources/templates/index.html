@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+	crossorigin="anonymous" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+	integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r"
+	crossorigin="anonymous" />
+<link rel="stylesheet"
+	href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+</head>
+<body class="container" ng-app="tmwApp">
+	<nav class="navbar navbar-inverse  navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand">Cloud Technologies # Project 1</a>
+			</div>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="" ng-show="isUserLoggedIn">Welcome {{username}}</a></li>
+				<li><a ng-controller="logoutController" ng-click="logout()" ng-show="isUserLoggedIn"><span
+						class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+			</ul>
+
+		</div>
+	</nav>
+	
+	<br/>
+  	<br/>
+  	<br/>
+  	
+	<div class="ng-view"></div>
+	</body>
+
+<script src="/js/tmwApp.js"></script>
+<script src="/js/loginCtrl.js"></script>
+<script src="/js/uploadFileCtrl.js"></script>
+<script src="/js/getFilesCtrl.js"></script>
+<script src="/js/deleteFile.js"></script>
+<script src="/js/downloadFileCtrl.js"></script>
+<script src="/js/logoutCtrl.js"></script>
+</html>

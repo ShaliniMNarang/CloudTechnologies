@@ -1,0 +1,68 @@
+<div class="container">
+	<div class="modal-body row">
+		<div>
+			<div ng-controller="uploadFileController">
+				<form>
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="uploadfile">Upload
+							File:</label>
+						<div>
+							<input class="form-control" type="file" file-model="uploadedFile"
+								placeholder="Upload File"></input>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="uploadfile">Description:</label>
+						<div>
+							<input class="form-control" type="text" ng-model="description"
+								placeholder="Description"></input>
+						</div>
+					</div>
+					<div>
+						<h6 class="text-warning">The file will be updated, if you choose to upload the same file again.</h6>
+					</div>
+					<div class="form-group">
+						<div>
+							<button type="submit" class="btn btn-default"
+								ng-click="doUploadFile()">Upload</button>
+						</div>
+					</div>
+				</form>
+				<hr/>
+				<div>
+					<p>Upload Status : </p>
+					<p ng-bind="uploadResult"></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<hr/>
+	<div>
+		<p>Files uploaded by - <b>{{firstname}} {{lastname}} </b></p>
+		<div>
+			<div ng-controller="getFilesController">
+			    <p>    Click <a ng-click="doGetFiles()">here</a> to load list of files.</p>
+			<table class="table .table-hover">
+			    <tr>
+			        <th>File Name</th>
+			        <th>Key Name</th>
+			        <th>Description</th>
+			        <th>Upload Date</th>
+			        <th>Modified Date</th>
+			        <th>Delete</th>
+			        <th>Download</th>
+			    </tr>
+			    <tr ng-repeat="file in fileDetails">
+			        <td>{{file.fileName}}</td>
+			        <td>{{file.keyName}}</td>
+			        <td>{{file.description}}</td>
+			        <td>{{file.createDate}}</td>
+			        <td>{{file.updateDate}}</td>
+			        <td><a ng-controller="deleteFileController" ng-click="deleteFile(username, file.keyName)">Delete</a></td>
+			        <td><a ng-controller="downloadFileController" ng-click="downloadFile(username, file.fileName, file.keyName)">Download</a></td>
+			    </tr>
+			</table>
+			</div>
+		</div>
+	</div>
+</div>
