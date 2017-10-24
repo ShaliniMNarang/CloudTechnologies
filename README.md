@@ -28,3 +28,8 @@ Middle Tier - Spring Boot
 DB Tier - MySQL RDS
 Hosted on - Amazon AWS
 Files Storage - Amazon S3
+
+Below are some screen shots of the application.
+
+1. Login page:
+![3](https://user-images.githubusercontent.com/31361406/31965230-80f1def6-b8bb-11e7-8f69-b06e0a73f872.png)
